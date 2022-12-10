@@ -16,3 +16,4 @@ confirmedPassword.addEventListener('input', () => {
     confirmedPassword.style.border = "1.5px solid #E7E9EC";
     errorAlert.classList.remove('no-match');
 });
+
