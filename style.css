@@ -8,11 +8,14 @@
 :root{
     --body-background-color: #0E0E0E;
     --main-bg-color: #F9FAFB;
+    --button-text-color: #FFFFFF;
     --button-color: #596D48;
+    --form-background-color: #FFFFFF;
     --side-header-text-color: #FFFFFF;
     --side-footer-text-color: #DDDCDC;
     --main-text-color: #000000;
     --default-input-border-color: #E7E9EC;
+    --label-text-color: #414141;
     --focus-input-border-color: #416ADD;
     --invalid-input-border-color: #C54242;
 }
@@ -27,6 +30,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: var(--body-background-color);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -36,24 +40,28 @@ body{
 }
 
 .side-image-container{
-    height: 100vh;
     width: 500px;
     background-image: url("images/leaves.jpg");
     background-repeat: no-repeat;
     background-position-x: center;
-    position: relative;
+    background-position-y: center;
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .side-header{
     height: 150px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
     top: 200px;
     color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    top: -200px;
 }
 
 .odin-logo{
@@ -69,10 +77,11 @@ body{
     height: auto;
     width: 100%;
     color: var(--side-footer-text-color);
-    position: absolute;
     bottom: 0.5rem;
     text-align: center;
     font-size: 0.8rem;
+    position: relative;
+    bottom: -380px;
 }
 
 .side-footer a{
@@ -81,6 +90,137 @@ body{
 
 .main-container{
     height: 100vh;
-    width: 700px;
+    width: 800px;
     background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description-container{
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0 4rem 0 2rem;
+}
+
+.description-container > p{
+    margin-bottom: 1.5rem;
+}
+
+.description-container span{
+    font-style: italic;
+}
+
+.form-section{
+    background-color: var(--form-background-color);
+    padding: 1rem 2rem 2rem 3rem;
+}
+
+form{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+form > legend{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.input-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.label-and-input{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0.75rem 0;
+}
+
+label{
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--label-text-color);
+    margin-bottom: 2.5px;
+}
+
+input{
+    width: 250px;
+    height: 30px;
+    border: 1.5px solid var(--default-input-border-color);
+    border-radius: 5px;
+    outline: none;
+    padding-left: 3px;
+}
+
+input:invalid{
+    border: 1.5px solid var(--invalid-input-border-color);
+}
+
+input:placeholder-shown{
+    border: 1.5px solid var(--default-input-border-color);
+}
+
+input:focus{
+    border: 2px solid var(--focus-input-border-color);
+}
+
+.login-signup-section{
+    padding-left: 3rem;
+}
+
+.login-signup-section > *{
+    margin-top: 2rem;
+}
+
+.must-match{
+    position: relative;
+}
+
+.no-match::before{
+    position: absolute;
+    content: "*Passwords do not match";
+    color: #C54242;
+    font-size: 0.8rem;
+    top: 50px;
+    left: 2.5px;
+}
+
+
+button{
+    display: inline-block;
+    padding: 12px 55px;
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.login-signup-section a{
+    color: var(--button-color);
+    text-decoration: none;
+    font-weight: 600;
 }

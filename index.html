@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
+
+<body>
+
     <div class="content-container">
         <div class="side-image-container">
             <header class="side-header">
@@ -21,11 +24,54 @@
         </div>
 
         <div class="main-container">
+            <section class="description-container">
+                <p>This is not a real online service! You know you need something like this
+                    in you life to help you realize your deepest dreams.
+                    <br>
+                    Sign up <span>now</span> to get started.
+                </p>
+                <p>You <span>know</span> you want to.</p>
+            </section>
+            <section class="form-section">
+                <form id="myform" action="#">
+                    <legend>Let's do this!</legend>
+                    <div class="input-container">
+                        <div class="label-and-input">
+                            <label for="first name">FIRST NAME*</label>
+                            <input type="text" name="first-name" id="first-name" placeholder=" " minlength="3" required>
+                        </div>
+                        <div class="label-and-input">
+                            <label for="last name">LAST NAME*</label>
+                            <input type="text" name="last-name" id="last-name" placeholder=" " minlength="3" required>
+                        </div>
+                        <div class="label-and-input">
+                            <label for="email">EMAIL*</label>
+                            <input type="email" name="email" id="email" placeholder=" " required>
+                        </div>
+                        <div class="label-and-input">
+                            <label for="phone-number">PHONE NUMBER</label>
+                            <input type="tel" name="phone-number" id="phone-number" placeholder=" ">
+                        </div>
+                        <div class="label-and-input must-match">
+                            <label for="password">PASSWORD*</label>
+                            <input type="password" name="password" id="password" placeholder=" " minlength="8" required>
+                            <span id="pass" class=""></span>
+                        </div>
+                        <div class="label-and-input">
+                            <label for="confirm-password">CONFIRM PASSWORD*</label>
+                            <input type="password" name="confirmed-password" id="confirm-password" placeholder=" " minlength="8" required>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section class="login-signup-section">
+                <button type="submit" form="myform" value="Submit">Create Account</button>
+                <p class="login">Already have an account? <a href="">Log in</a></p>
+            </section>
 
         </div>
     </div>
-<body>
 
-</body>
+    </body>
 
 </html>
