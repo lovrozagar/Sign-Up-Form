@@ -3,13 +3,14 @@
     font-style: normal;
     font-weight: normal;
     src: local('Nordic'), url('fonts/Norse-Bold.otf') format('truetype');
-  }
+}
 
-:root{
+:root {
     --body-background-color: #0E0E0E;
     --main-bg-color: #F9FAFB;
     --button-text-color: #FFFFFF;
     --button-color: #596D48;
+    --button-hover-color: #7a9463;
     --form-background-color: #FFFFFF;
     --side-header-text-color: #FFFFFF;
     --side-footer-text-color: #DDDCDC;
@@ -20,13 +21,13 @@
     --invalid-input-border-color: #C54242;
 }
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,11 +36,11 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.content-container{
+.content-container {
     display: flex;
 }
 
-.side-image-container{
+.side-image-container {
     width: 500px;
     background-image: url("images/leaves.jpg");
     background-repeat: no-repeat;
@@ -51,7 +52,7 @@ body{
     justify-content: center;
 }
 
-.side-header{
+.side-header {
     height: 150px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -64,16 +65,16 @@ body{
     top: -200px;
 }
 
-.odin-logo{
+.odin-logo {
     height: 125px;
 }
 
-.odin-title{
+.odin-title {
     font-family: "Nordic";
     font-size: 86px;
 }
 
-.side-footer{
+.side-footer {
     height: auto;
     width: 100%;
     color: var(--side-footer-text-color);
@@ -84,11 +85,11 @@ body{
     bottom: -380px;
 }
 
-.side-footer a{
+.side-footer a {
     color: var(--side-footer-text-color);
 }
 
-.main-container{
+.main-container {
     height: 100vh;
     width: 800px;
     background-color: var(--main-bg-color);
@@ -97,31 +98,31 @@ body{
     justify-content: center;
 }
 
-.description-container{
+.description-container {
     margin-bottom: 2rem;
     font-size: 1.5rem;
     font-weight: 500;
     padding: 0 4rem 0 2rem;
 }
 
-.description-container > p{
+.description-container>p {
     margin-bottom: 1.5rem;
 }
 
-.description-container span{
+.description-container span {
     font-style: italic;
 }
 
-.form-section{
+.form-section {
     background-color: var(--form-background-color);
     padding: 1rem 2rem 2rem 3rem;
 }
 
-form{
+form {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-form > legend{
+form>legend {
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -131,33 +132,33 @@ button,
 input,
 select,
 textarea {
-  font-family: inherit;
-  font-size: 100%;
+    font-family: inherit;
+    font-size: 100%;
 }
 
 input,
 textarea,
 select,
 button {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.input-container{
+.input-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
 
-.label-and-input{
+.label-and-input {
     display: flex;
     flex-direction: column;
     width: 300px;
     margin: 0.75rem 0;
 }
 
-label{
+label {
     letter-spacing: 3px;
     font-size: 0.7rem;
     font-weight: 500;
@@ -165,7 +166,7 @@ label{
     margin-bottom: 2.5px;
 }
 
-input{
+input {
     width: 250px;
     height: 30px;
     border: 1.5px solid var(--default-input-border-color);
@@ -174,31 +175,34 @@ input{
     padding-left: 3px;
 }
 
-input:invalid{
+input:invalid {
     border: 1.5px solid var(--invalid-input-border-color);
 }
 
-input:placeholder-shown{
+input:placeholder-shown {
     border: 1.5px solid var(--default-input-border-color);
 }
 
-input:focus{
+input:focus {
     border: 2px solid var(--focus-input-border-color);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
 }
 
-.login-signup-section{
+.login-signup-section {
     padding-left: 3rem;
 }
 
-.login-signup-section > *{
+.login-signup-section>* {
     margin-top: 2rem;
 }
 
-.must-match{
+.must-match {
     position: relative;
 }
 
-.no-match::before{
+.no-match::before {
     position: absolute;
     content: "*Passwords do not match";
     color: #C54242;
@@ -208,7 +212,7 @@ input:focus{
 }
 
 
-button{
+button {
     display: inline-block;
     padding: 12px 55px;
     background-color: var(--button-color);
@@ -219,8 +223,20 @@ button{
     font-weight: 600;
 }
 
-.login-signup-section a{
+button:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.19);
+    -webkit-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.19);
+    -moz-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.19);
+}
+
+
+.login-signup-section a {
     color: var(--button-color);
     text-decoration: none;
     font-weight: 600;
+}
+
+.login-signup-section a:hover {
+    color: var(--button-hover-color);
 }
